@@ -3,10 +3,10 @@
 // Crear un objeto con las canciones, rutas e imágenes
 const canciones = [
   {
-    titulo: "TITULO1",
-    artista: "ARTISTA1",
-    ruta: "./canciones/7 Rings.mp3",
-    imagen: "./img/7-rings.jpg",
+    titulo: "FEEL ME??",
+    artista: "Trueno",
+    ruta: "./canciones/Trueno-FEEL-ME.mp3",
+    imagen: "./img/Trueno-FEEL-ME.jpg",
   },  
   {
     titulo: "TITULO2",
