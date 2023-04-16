@@ -1,4 +1,4 @@
-## Doplax Easy-Player: un reproductor de música minimalista 🎵
+## Doplax MP3-Easy-Player: un reproductor de música minimalista 🎵
 
 Este reproductor de música minimalista y elegante está diseñado para brindarte una experiencia agradable y sin complicaciones.
 
