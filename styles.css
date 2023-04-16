@@ -85,7 +85,6 @@ body {
     width: 40px;
     margin: 0 15px;
     margin-top: -10px;
-    /*filter: invert(91%) sepia(51%) saturate(2931%) hue-rotate(280deg) brightness(87%) contrast(84%);*/
 }
 
 .botones img:hover {
@@ -93,16 +92,13 @@ body {
 }
 
 .anterior,
-.play,
-.siguiente,
-.pausa {
+reproducirPausar,
+.siguiente {
     background-color: var(--fondo-reproductor);
     cursor: pointer;
 }
 
-.pausa {
-    display: none;
-}
+
 
 button {
     border: none;

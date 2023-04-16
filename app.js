@@ -1,5 +1,5 @@
 // :::::::::  FUNCTIONS ::::::::::
-function renderizarCanciones() {
+function renderSongs() {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   swiperWrapper.innerHTML = "";
 
@@ -26,26 +26,49 @@ function renderizarCanciones() {
           <button class="anterior" onClick="stopMusic()">
             <img src="icon/anterior.png">
           </button>
+          <div class="reproducirPausar" id="reproducirPausar${index}">
+            <img src="icon/play.png" id="playPauseIcon${index}">
+          </div>
           <button class="siguiente" onClick="stopMusic()">
             <img src="icon/siguiente.png">
           </button>
         </div>
       </div>
     `;
-
     swiperWrapper.appendChild(swiperSlide);
+    
+    // To add pausePlay feature
+    const reproducirPausarButton = document.querySelector(`#reproducirPausar${index}`);
+    reproducirPausarButton.addEventListener("click", () => reproducirPausar(index));
   });
 }
 
 function stopMusic() {
   const audios = document.querySelectorAll(".audio");
-  audios.forEach((audio) => {
+  const playPauseIcons = document.querySelectorAll("[id^='playPauseIcon']");
+
+  audios.forEach((audio, index) => {
     audio.pause();
     audio.currentTime = 0;
+    playPauseIcons[index].src = "icon/play.png";
   });
 }
 
 
+
+function reproducirPausar(index) {
+  const audio = document.querySelector(`#audio${index}`);
+  const playPauseIcon = document.querySelector(`#playPauseIcon${index}`);
+
+  if (audio.paused) {
+
+    audio.play();
+    playPauseIcon.src = "icon/pause.png";
+  } else {
+    audio.pause();
+    playPauseIcon.src = "icon/play.png";
+  }
+}
 
 
 
@@ -72,7 +95,7 @@ window.onload = () => {
 
   
   //Cargamos las canciones
-  renderizarCanciones();
+  renderSongs();
 
   
   // Inicializar el Carousel
