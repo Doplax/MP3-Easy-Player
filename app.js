@@ -86,6 +86,18 @@ const canciones = [
     ruta: "./canciones/Rojuu-Umi(Parkineos-Remix).mp3",
     imagen: "./img/Rojuu-Umi(Parkineos-Remix).webp",  
   },
+  {
+    titulo: "Redbone",
+    artista: "Childish Gambino",
+    ruta: "./canciones/ChildishGambino-Redbone.mp3",
+    imagen: "./img/ChildishGambino-Redbone.webp",  
+  },
+  {
+    titulo: "Viene y Va",
+    artista: "C.Tangana",
+    ruta: "./canciones/c.tangana-VieneyVa.mp3",
+    imagen: "./img/c.tangana-VieneyVa.webp",  
+  },
 ];
 
 

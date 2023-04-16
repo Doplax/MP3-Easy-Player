@@ -3,7 +3,7 @@
     --fondo-reproductor: #FFFFFF;
     --sombra-reproductor: black;
     --fuente: 'PT Sans Narrow', sans-serif;
-    --color-fuente: #808080;
+    --title-color: rgb(95, 95, 95);
     }
     
     
@@ -59,18 +59,21 @@ body {
 
 
 /* Nombre de la cancion */
-.cancion .titulo {
-    text-align: center;
+.cancion  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .titulo {
-    margin: 10px;
-    color: #bbbdbe;
+    color: var(--title-color);
 }
 
-.artista {
+.titulo,.artista {
     margin: 10px;
 }
+
 
 
 /* Botones */
@@ -118,7 +121,7 @@ audio {
 
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-panel {
-    background-color: #ffffff !important;
+    background-color: #ffffff;
 }
 
 audio::-webkit-media-controls-current-time-display,
