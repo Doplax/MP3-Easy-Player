@@ -1,32 +1,8 @@
-
-
-// Crear un objeto con las canciones, rutas e imágenes
-const canciones = [
-  {
-    titulo: "FEEL ME??",
-    artista: "Trueno",
-    ruta: "./canciones/Trueno-FEEL-ME.mp3",
-    imagen: "./img/Trueno-FEEL-ME.jpg",
-  },  
-  {
-    titulo: "TITULO2",
-    artista: "ARTISTA1",
-    ruta: "./canciones/7 Rings.mp3",
-    imagen: "./img/7-rings.jpg",  
-  },
-  {
-    titulo: "TITULO3",
-    artista: "ARTISTA1",
-    ruta: "./canciones/7 Rings.mp3",
-    imagen: "./img/7-rings.jpg",  
-  },
-];
-
-
-// Función para renderizar las canciones
+// :::::::::  FUNCTIONS ::::::::::
 function renderizarCanciones() {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   swiperWrapper.innerHTML = "";
+
 
   canciones.forEach((cancion, index) => {
     const swiperSlide = document.createElement("div");
@@ -47,10 +23,10 @@ function renderizarCanciones() {
           <source type="audio/mp3" src="${cancion.ruta}">
         </audio>
         <div class="botones">
-          <button class="anterior"">
+          <button class="anterior" onClick="stopMusic()">
             <img src="icon/anterior.png">
           </button>
-          <button class="siguiente" >
+          <button class="siguiente" onClick="stopMusic()">
             <img src="icon/siguiente.png">
           </button>
         </div>
@@ -60,12 +36,45 @@ function renderizarCanciones() {
     swiperWrapper.appendChild(swiperSlide);
   });
 }
-// Ejecutamos la función al cargar la página
+
+function stopMusic() {
+  const audios = document.querySelectorAll(".audio");
+  audios.forEach((audio) => {
+    audio.pause();
+    audio.currentTime = 0;
+  });
+}
+
+
+
+
+
+// ::::::::::  Variables :::::::::::::::
+const canciones = [
+  {
+    titulo: "FEEL ME??",
+    artista: "Trueno",
+    ruta: "./canciones/Trueno-FEEL-ME.mp3",
+    imagen: "./img/Trueno-FEEL-ME.webp",
+  },  
+  {
+    titulo: "Umi (Remix)",
+    artista: "Parkineos",
+    ruta: "./canciones/Rojuu-Umi(Parkineos-Remix).mp3",
+    imagen: "./img/Rojuu-Umi(Parkineos-Remix).webp",  
+  },
+];
+
+
+
+// :::::::::::  MAIN  ::::::::::
 window.onload = () => {
+
   
   //Cargamos las canciones
   renderizarCanciones();
 
+  
   // Inicializar el Carousel
   const swiper = new Swiper(".swiper", {
     cssMode: false,
@@ -74,6 +83,6 @@ window.onload = () => {
       prevEl: ".anterior",
     },
   });
-
+  swiper.on("slideChange", stopMusic);
 };
 
