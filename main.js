@@ -23,13 +23,13 @@ function renderSongs() {
         </audio>
         <div class="buttons">
           <div class="previous" onClick="stopMusic()">
-            <img src="/icon/previous.png">
+            <img src="/assets/icon/previous.png">
           </div>
           <div class="playPause" id="playPause${index}">
-            <img src="icon/play.png" id="playPauseIcon${index}">
+            <img src="/assets/icon/play.png" id="playPauseIcon${index}">
           </div>
           <div class="next" onClick="stopMusic()">
-            <img src="/icon/next.png">
+            <img src="/assets/icon/next.png">
           </div>
         </div>
       </div>
@@ -71,26 +71,26 @@ const songs = [
   {
     title: "FEEL ME??",
     artist: "Trueno",
-    path: "./songs/Trueno-FEEL-ME.mp3",
-    image: "./img/Trueno-FEEL-ME.webp",
+    path: "./assets/songs/Trueno-FEEL-ME.mp3",
+    image: "./assets/img/Trueno-FEEL-ME.webp",
   },  
   {
     title: "Redbone",
     artist: "Childish Gambino",
-    path: "./songs/ChildishGambino-Redbone.mp3",
-    image: "./img/ChildishGambino-Redbone.webp",  
+    path: "./assets/songs/ChildishGambino-Redbone.mp3",
+    image: "./assets/img/ChildishGambino-Redbone.webp",  
   },
   {
     title: "Viene y Va",
     artist: "C.Tangana",
-    path: "./songs/c.tangana-VieneyVa.mp3",
-    image: "./img/c.tangana-VieneyVa.webp",  
+    path: "./assets/songs/c.tangana-VieneyVa.mp3",
+    image: "./assets/img/c.tangana-VieneyVa.webp",  
   },
   {
     title: "Umi (Remix)",
     artist: "Parkineos",
-    path: "./songs/Rojuu-Umi(Parkineos-Remix).mp3",
-    image: "./img/Rojuu-Umi(Parkineos-Remix).webp",  
+    path: "./assets/songs/Rojuu-Umi(Parkineos-Remix).mp3",
+    image: "./assets/img/Rojuu-Umi(Parkineos-Remix).webp",  
   },
 ];
 
@@ -99,7 +99,7 @@ window.onload = () => {
   renderSongs();
 
   
-  // Inicializar el Carousel
+  // Slider
   const swiper = new Swiper(".swiper", {
     cssMode: false,
     navigation: {
