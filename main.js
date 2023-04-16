@@ -65,7 +65,7 @@ function playPause(index) {
     playPauseIcon.src = "./assets/icon/play.png";
   }
 }
-
+ 
 // ::::::::::  Variables :::::::::::::::
 const songs = [
   {
