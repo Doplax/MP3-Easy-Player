@@ -3,43 +3,42 @@ function renderSongs() {
   const swiperWrapper = document.querySelector(".swiper-wrapper");
   swiperWrapper.innerHTML = "";
 
-
-  canciones.forEach((cancion, index) => {
+  songs.forEach((song, index) => {
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");
 
     swiperSlide.innerHTML = `
-      <div class="reproductor">
-        <div class="portada">
-          <img src="${cancion.imagen}" />
+      <div class="player">
+        <div class="cover">
+          <img src="${song.image}" />
         </div>
 
-        <div class="cancion">
-          <h1 class="titulo">${cancion.titulo}</h1>
-          <h2 class="artista">${cancion.artista}</h2>
+        <div class="song">
+          <h1 class="title">${song.title}</h1>
+          <h2 class="artist">${song.artist}</h2>
         </div>
 
         <audio class="audio" id="audio${index}" preload="true" controls>
-          <source type="audio/mp3" src="${cancion.ruta}">
+          <source type="audio/mp3" src="${song.path}">
         </audio>
-        <div class="botones">
-          <button class="anterior" onClick="stopMusic()">
-            <img src="icon/anterior.png">
-          </button>
-          <div class="reproducirPausar" id="reproducirPausar${index}">
+        <div class="buttons">
+          <div class="previous" onClick="stopMusic()">
+            <img src="/icon/previous.png">
+          </div>
+          <div class="playPause" id="playPause${index}">
             <img src="icon/play.png" id="playPauseIcon${index}">
           </div>
-          <button class="siguiente" onClick="stopMusic()">
-            <img src="icon/siguiente.png">
-          </button>
+          <div class="next" onClick="stopMusic()">
+            <img src="/icon/next.png">
+          </div>
         </div>
       </div>
     `;
     swiperWrapper.appendChild(swiperSlide);
     
-    // To add pausePlay feature
-    const reproducirPausarButton = document.querySelector(`#reproducirPausar${index}`);
-    reproducirPausarButton.addEventListener("click", () => reproducirPausar(index));
+    // To add playPause feature
+    const playPauseButton = document.querySelector(`#playPause${index}`);
+    playPauseButton.addEventListener("click", () => playPause(index));
   });
 }
 
@@ -54,14 +53,11 @@ function stopMusic() {
   });
 }
 
-
-
-function reproducirPausar(index) {
+function playPause(index) {
   const audio = document.querySelector(`#audio${index}`);
   const playPauseIcon = document.querySelector(`#playPauseIcon${index}`);
 
   if (audio.paused) {
-
     audio.play();
     playPauseIcon.src = "icon/pause.png";
   } else {
@@ -70,43 +66,36 @@ function reproducirPausar(index) {
   }
 }
 
-
-
 // ::::::::::  Variables :::::::::::::::
-const canciones = [
+const songs = [
   {
-    titulo: "FEEL ME??",
-    artista: "Trueno",
-    ruta: "./canciones/Trueno-FEEL-ME.mp3",
-    imagen: "./img/Trueno-FEEL-ME.webp",
+    title: "FEEL ME??",
+    artist: "Trueno",
+    path: "./songs/Trueno-FEEL-ME.mp3",
+    image: "./img/Trueno-FEEL-ME.webp",
   },  
   {
-    titulo: "Umi (Remix)",
-    artista: "Parkineos",
-    ruta: "./canciones/Rojuu-Umi(Parkineos-Remix).mp3",
-    imagen: "./img/Rojuu-Umi(Parkineos-Remix).webp",  
+    title: "Redbone",
+    artist: "Childish Gambino",
+    path: "./songs/ChildishGambino-Redbone.mp3",
+    image: "./img/ChildishGambino-Redbone.webp",  
   },
   {
-    titulo: "Redbone",
-    artista: "Childish Gambino",
-    ruta: "./canciones/ChildishGambino-Redbone.mp3",
-    imagen: "./img/ChildishGambino-Redbone.webp",  
+    title: "Viene y Va",
+    artist: "C.Tangana",
+    path: "./songs/c.tangana-VieneyVa.mp3",
+    image: "./img/c.tangana-VieneyVa.webp",  
   },
   {
-    titulo: "Viene y Va",
-    artista: "C.Tangana",
-    ruta: "./canciones/c.tangana-VieneyVa.mp3",
-    imagen: "./img/c.tangana-VieneyVa.webp",  
+    title: "Umi (Remix)",
+    artist: "Parkineos",
+    path: "./songs/Rojuu-Umi(Parkineos-Remix).mp3",
+    image: "./img/Rojuu-Umi(Parkineos-Remix).webp",  
   },
 ];
 
-
-
 // :::::::::::  MAIN  ::::::::::
 window.onload = () => {
-
-  
-  //Cargamos las canciones
   renderSongs();
 
   
@@ -114,8 +103,8 @@ window.onload = () => {
   const swiper = new Swiper(".swiper", {
     cssMode: false,
     navigation: {
-      nextEl: ".siguiente",
-      prevEl: ".anterior",
+      nextEl: ".next",
+      prevEl: ".previous",
     },
   });
   swiper.on("slideChange", stopMusic);
