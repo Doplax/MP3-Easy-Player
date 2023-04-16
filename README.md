@@ -3,9 +3,9 @@
 Este reproductor de música minimalista y elegante está diseñado para brindarte una experiencia agradable y sin complicaciones.
 
 **Características**:
-- Lista de canciones deslizable
-- Cambio fácil de canciones con botones de navegación
-- Mobile touch and responsive
+- Lista de canciones deslizable.
+- Cambio fácil de canciones con botones de navegación.
+- Adaptado a dispositivos moviles.
 
 Echa un vistazo al video para ver cómo funciona el reproductor en acción:
 

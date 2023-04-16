@@ -23,13 +23,13 @@ function renderSongs() {
         </audio>
         <div class="buttons">
           <div class="previous" onClick="stopMusic()">
-            <img src="/assets/icon/previous.png">
+            <img src="./assets/icon/previous.png">
           </div>
           <div class="playPause" id="playPause${index}">
-            <img src="/assets/icon/play.png" id="playPauseIcon${index}">
+            <img src="./assets/icon/play.png" id="playPauseIcon${index}">
           </div>
           <div class="next" onClick="stopMusic()">
-            <img src="/assets/icon/next.png">
+            <img src="./assets/icon/next.png">
           </div>
         </div>
       </div>
@@ -49,7 +49,7 @@ function stopMusic() {
   audios.forEach((audio, index) => {
     audio.pause();
     audio.currentTime = 0;
-    playPauseIcons[index].src = "icon/play.png";
+    playPauseIcons[index].src = "./assets/icon/play.png";
   });
 }
 
@@ -59,10 +59,10 @@ function playPause(index) {
 
   if (audio.paused) {
     audio.play();
-    playPauseIcon.src = "icon/pause.png";
+    playPauseIcon.src = "./assets/icon/pause.png";
   } else {
     audio.pause();
-    playPauseIcon.src = "icon/play.png";
+    playPauseIcon.src = "./assets/icon/play.png";
   }
 }
 
