@@ -11,7 +11,7 @@ Echa un vistazo al video para ver cómo funciona el reproductor en acción:
 
 [Visita el proyecto en vivo](https://doplax.github.io/MP3-Easy-Player/)
 
-![texto alternativo](./assets/mp3-easy-player.png\)
+![Foto del proyecto](./assets/mp3-easy-player.png)
 
 
 
