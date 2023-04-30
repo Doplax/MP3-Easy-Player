@@ -11,10 +11,8 @@ Echa un vistazo al video para ver cómo funciona el reproductor en acción:
 
 [Visita el proyecto en vivo](https://doplax.github.io/MP3-Easy-Player/)
 
-<video width="640" height="480" controls>
-  <source src="./assets/video-demo.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de video.
-</video>
+![texto alternativo](./assets/mp3-easy-player.png\)
+
 
 
 
